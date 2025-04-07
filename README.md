@@ -41,3 +41,6 @@ To build:
 GOOS=windows GOARCH=amd64 go build main.go
 ```
 ## Run the attack
+```
+.\main.exe <PID>
+```
