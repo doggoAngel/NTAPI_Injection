@@ -43,3 +43,7 @@ GOOS=windows GOARCH=amd64 go build main.go
 ```
 .\main.exe <PID>
 ```
+## POC
+![Alt text](poc/cmd.png)
+![Alt text](poc/POC.png)
+![Alt text](poc/gestione_attivita.png)
