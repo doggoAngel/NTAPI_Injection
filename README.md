@@ -1,9 +1,8 @@
 # NT API Injection
-This is a tecnique that allow a malware inject shellcode to a target PID. 
-Use the NATIVE API windows -> ntdll.dll
+This is a tecnique that allows a malware to inject shellcode into a target process by using Windows Native API (via ntdll.dll).
 
-In this case the program injects a shellcode that run a MessageBox.
-If you want change the shellcode, you need found on the source code this variable: 
+In this example, the program injects a shellcode that displays a MessageBox.
+If you want to change the shellcode, look for this variable in the source code: 
 ```
 var codeS = []byte{0xfc,0x48,0x81,0xe4,0xf0,0xff,0xff,0xff,0xe8,
 	0xd0,0x00,0x00,0x00,0x41,0x51,0x41,0x50,0x52,0x51,0x56,0x48,
@@ -34,9 +33,9 @@ var codeS = []byte{0xfc,0x48,0x81,0xe4,0xf0,0xff,0xff,0xff,0xe8,
 	0x49,0x20,0x49,0x4e,0x4a,0x45,0x43,0x54,0x49,0x4f,0x4e,0x00,
 	0x75,0x73,0x65,0x72,0x33,0x32,0x2e,0x64,0x6c,0x6c,0x00};
 ```
-And change the byte code with a your custom.
+And replace the existing bytecode with your custom shellcode.
 
-To build:
+# Build:
 ```
 GOOS=windows GOARCH=amd64 go build main.go
 ```
